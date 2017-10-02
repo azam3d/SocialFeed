@@ -12,6 +12,7 @@
 		C5382D021F81E01E00B67F43 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5382D011F81DE6300B67F43 /* SwiftyJSON.framework */; };
 		C5382D031F81E01E00B67F43 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5382D011F81DE6300B67F43 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5382D051F820D0B00B67F43 /* FeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5382D041F820D0A00B67F43 /* FeedDetailsViewController.swift */; };
+		C5382D341F822B9C00B67F43 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5382D331F822B9C00B67F43 /* Extensions.swift */; };
 		C563AA0A1F7C23E0002DD4FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA091F7C23E0002DD4FF /* AppDelegate.swift */; };
 		C563AA0C1F7C23E0002DD4FF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA0B1F7C23E0002DD4FF /* FeedViewController.swift */; };
 		C563AA0F1F7C23E0002DD4FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C563AA0D1F7C23E0002DD4FF /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		C5382CFF1F81A3D000B67F43 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		C5382D011F81DE6300B67F43 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		C5382D041F820D0A00B67F43 /* FeedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailsViewController.swift; sourceTree = "<group>"; };
+		C5382D331F822B9C00B67F43 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C563AA061F7C23DF002DD4FF /* SocialFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C563AA091F7C23E0002DD4FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C563AA0B1F7C23E0002DD4FF /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5382D321F822B5D00B67F43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5382CFF1F81A3D000B67F43 /* Feed.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C563A9FD1F7C23DF002DD4FF = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +147,7 @@
 				C5382D041F820D0A00B67F43 /* FeedDetailsViewController.swift */,
 				C59AD24C1F7EF32900146853 /* FeedSectionController.swift */,
 				C5382CFD1F817EAD00B67F43 /* FeedService.swift */,
-				C5382CFF1F81A3D000B67F43 /* Feed.swift */,
+				C5382D321F822B5D00B67F43 /* Model */,
 				C59AD2201F7CDC6100146853 /* Shared */,
 				C59AD21E1F7CDC0F00146853 /* Storyboards */,
 				C59AD21F1F7CDC3500146853 /* Views */,
@@ -177,6 +187,7 @@
 		C59AD2201F7CDC6100146853 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C5382D331F822B9C00B67F43 /* Extensions.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -289,6 +300,7 @@
 				C59AD24F1F7F653B00146853 /* PhotoCell.swift in Sources */,
 				C5382D001F81A3D000B67F43 /* Feed.swift in Sources */,
 				C59AD24D1F7EF32900146853 /* FeedSectionController.swift in Sources */,
+				C5382D341F822B9C00B67F43 /* Extensions.swift in Sources */,
 				C563AA0C1F7C23E0002DD4FF /* FeedViewController.swift in Sources */,
 				C5382D051F820D0B00B67F43 /* FeedDetailsViewController.swift in Sources */,
 				C563AA0A1F7C23E0002DD4FF /* AppDelegate.swift in Sources */,
