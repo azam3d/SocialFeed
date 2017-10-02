@@ -7,12 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5382CFE1F817EAD00B67F43 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5382CFD1F817EAD00B67F43 /* FeedService.swift */; };
+		C5382D001F81A3D000B67F43 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5382CFF1F81A3D000B67F43 /* Feed.swift */; };
 		C563AA0A1F7C23E0002DD4FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA091F7C23E0002DD4FF /* AppDelegate.swift */; };
-		C563AA0C1F7C23E0002DD4FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA0B1F7C23E0002DD4FF /* ViewController.swift */; };
+		C563AA0C1F7C23E0002DD4FF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA0B1F7C23E0002DD4FF /* FeedViewController.swift */; };
 		C563AA0F1F7C23E0002DD4FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C563AA0D1F7C23E0002DD4FF /* Main.storyboard */; };
 		C563AA111F7C23E0002DD4FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C563AA101F7C23E0002DD4FF /* Assets.xcassets */; };
 		C563AA141F7C23E0002DD4FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C563AA121F7C23E0002DD4FF /* LaunchScreen.storyboard */; };
 		C563AA1F1F7C23E0002DD4FF /* SocialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA1E1F7C23E0002DD4FF /* SocialFeedTests.swift */; };
+		C59AD2411F7EEDDE00146853 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59AD23F1F7EEDDD00146853 /* Moya.framework */; };
+		C59AD2421F7EEDDE00146853 /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C59AD23F1F7EEDDD00146853 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C59AD2431F7EEDDE00146853 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59AD2401F7EEDDD00146853 /* Alamofire.framework */; };
+		C59AD2441F7EEDDE00146853 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C59AD2401F7EEDDD00146853 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C59AD2471F7EEE1900146853 /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59AD2461F7EEE1900146853 /* IGListKit.framework */; };
+		C59AD2481F7EEE1900146853 /* IGListKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C59AD2461F7EEE1900146853 /* IGListKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C59AD24A1F7EEE6B00146853 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59AD2491F7EEE6B00146853 /* Result.framework */; };
+		C59AD24B1F7EEE6B00146853 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C59AD2491F7EEE6B00146853 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C59AD24D1F7EF32900146853 /* FeedSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AD24C1F7EF32900146853 /* FeedSectionController.swift */; };
+		C59AD24F1F7F653B00146853 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AD24E1F7F653B00146853 /* PhotoCell.swift */; };
+		C59AD2511F7F68C400146853 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C59AD2501F7F68C400146853 /* PhotoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,10 +38,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C59AD2451F7EEDDE00146853 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C59AD2481F7EEE1900146853 /* IGListKit.framework in Embed Frameworks */,
+				C59AD2421F7EEDDE00146853 /* Moya.framework in Embed Frameworks */,
+				C59AD2441F7EEDDE00146853 /* Alamofire.framework in Embed Frameworks */,
+				C59AD24B1F7EEE6B00146853 /* Result.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C5382CFD1F817EAD00B67F43 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		C5382CFF1F81A3D000B67F43 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		C563AA061F7C23DF002DD4FF /* SocialFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C563AA091F7C23E0002DD4FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C563AA0B1F7C23E0002DD4FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C563AA0B1F7C23E0002DD4FF /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		C563AA0E1F7C23E0002DD4FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C563AA101F7C23E0002DD4FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C563AA131F7C23E0002DD4FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +68,13 @@
 		C563AA1A1F7C23E0002DD4FF /* SocialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C563AA1E1F7C23E0002DD4FF /* SocialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedTests.swift; sourceTree = "<group>"; };
 		C563AA201F7C23E0002DD4FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C59AD23F1F7EEDDD00146853 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		C59AD2401F7EEDDD00146853 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		C59AD2461F7EEE1900146853 /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
+		C59AD2491F7EEE6B00146853 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		C59AD24C1F7EF32900146853 /* FeedSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionController.swift; sourceTree = "<group>"; };
+		C59AD24E1F7F653B00146853 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		C59AD2501F7F68C400146853 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +82,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59AD2471F7EEE1900146853 /* IGListKit.framework in Frameworks */,
+				C59AD2411F7EEDDE00146853 /* Moya.framework in Frameworks */,
+				C59AD2431F7EEDDE00146853 /* Alamofire.framework in Frameworks */,
+				C59AD24A1F7EEE6B00146853 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +102,10 @@
 		C563A9FD1F7C23DF002DD4FF = {
 			isa = PBXGroup;
 			children = (
+				C59AD2491F7EEE6B00146853 /* Result.framework */,
+				C59AD2461F7EEE1900146853 /* IGListKit.framework */,
+				C59AD2401F7EEDDD00146853 /* Alamofire.framework */,
+				C59AD23F1F7EEDDD00146853 /* Moya.framework */,
 				C563AA081F7C23DF002DD4FF /* SocialFeed */,
 				C563AA1D1F7C23E0002DD4FF /* SocialFeedTests */,
 				C563AA071F7C23DF002DD4FF /* Products */,
@@ -78,10 +125,14 @@
 			isa = PBXGroup;
 			children = (
 				C563AA091F7C23E0002DD4FF /* AppDelegate.swift */,
-				C563AA0B1F7C23E0002DD4FF /* ViewController.swift */,
-				C563AA0D1F7C23E0002DD4FF /* Main.storyboard */,
+				C563AA0B1F7C23E0002DD4FF /* FeedViewController.swift */,
+				C59AD24C1F7EF32900146853 /* FeedSectionController.swift */,
+				C5382CFD1F817EAD00B67F43 /* FeedService.swift */,
+				C5382CFF1F81A3D000B67F43 /* Feed.swift */,
+				C59AD2201F7CDC6100146853 /* Shared */,
+				C59AD21E1F7CDC0F00146853 /* Storyboards */,
+				C59AD21F1F7CDC3500146853 /* Views */,
 				C563AA101F7C23E0002DD4FF /* Assets.xcassets */,
-				C563AA121F7C23E0002DD4FF /* LaunchScreen.storyboard */,
 				C563AA151F7C23E0002DD4FF /* Info.plist */,
 			);
 			path = SocialFeed;
@@ -96,6 +147,31 @@
 			path = SocialFeedTests;
 			sourceTree = "<group>";
 		};
+		C59AD21E1F7CDC0F00146853 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C563AA121F7C23E0002DD4FF /* LaunchScreen.storyboard */,
+				C563AA0D1F7C23E0002DD4FF /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C59AD21F1F7CDC3500146853 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C59AD24E1F7F653B00146853 /* PhotoCell.swift */,
+				C59AD2501F7F68C400146853 /* PhotoCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C59AD2201F7CDC6100146853 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +182,7 @@
 				C563AA021F7C23DF002DD4FF /* Sources */,
 				C563AA031F7C23DF002DD4FF /* Frameworks */,
 				C563AA041F7C23DF002DD4FF /* Resources */,
+				C59AD2451F7EEDDE00146853 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59AD2511F7F68C400146853 /* PhotoCell.xib in Resources */,
 				C563AA141F7C23E0002DD4FF /* LaunchScreen.storyboard in Resources */,
 				C563AA111F7C23E0002DD4FF /* Assets.xcassets in Resources */,
 				C563AA0F1F7C23E0002DD4FF /* Main.storyboard in Resources */,
@@ -199,8 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C563AA0C1F7C23E0002DD4FF /* ViewController.swift in Sources */,
+				C59AD24F1F7F653B00146853 /* PhotoCell.swift in Sources */,
+				C5382D001F81A3D000B67F43 /* Feed.swift in Sources */,
+				C59AD24D1F7EF32900146853 /* FeedSectionController.swift in Sources */,
+				C563AA0C1F7C23E0002DD4FF /* FeedViewController.swift in Sources */,
 				C563AA0A1F7C23E0002DD4FF /* AppDelegate.swift in Sources */,
+				C5382CFE1F817EAD00B67F43 /* FeedService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +437,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B94C7U72JS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SocialFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.twebble.SocialFeed;
@@ -370,6 +456,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B94C7U72JS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SocialFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.twebble.SocialFeed;

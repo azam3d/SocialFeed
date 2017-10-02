@@ -1,6 +1,8 @@
 
-import UIKit
+import Alamofire
 import IGListKit
+import Moya
+import UIKit
 
 class FeedViewController: UIViewController {
 
@@ -22,42 +24,56 @@ class FeedViewController: UIViewController {
         navigationItem.title = "Feed"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
+        
+        fetchData()
+    }
+    
+    private func fetchData() {
+        let provider = MoyaProvider<FeedService>()
+        provider.request(.showPost) { result in
+            switch result {
+            case let .success(moyaResponse):
+                print("success")
+                dump(moyaResponse)
+                
+                do {
+                    try moyaResponse.filterSuccessfulStatusCodes()
+                    let data2 = try moyaResponse.mapJSON()
+                    print(data2)
+                }
+                catch {
+                    print("catch error")
+                }
+            case let .failure(error):
+                print("error")
+                print(error.errorDescription!)
+            }
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = view.bounds
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-}
-
-extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row]
-        
-        return cell
+        data = []
     }
     
 }
 
 extension FeedViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return data as ListDiffable
+        return data as [ListDiffable]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        <#code#>
+        return FeedSectionController()
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
         return nil
     }
-    
     
 }
