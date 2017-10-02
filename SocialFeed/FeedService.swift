@@ -1,5 +1,4 @@
 
-import Foundation
 import Moya
 
 enum FeedService {
@@ -46,6 +45,7 @@ extension FeedService: TargetType {
 }
 
 private extension String {
+    
     var urlEscaped: String {
         return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
@@ -53,4 +53,5 @@ private extension String {
     var utf8Encoded: Data {
         return data(using: .utf8)!
     }
+    
 }

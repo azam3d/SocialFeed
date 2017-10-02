@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed Details View Controller-->
         <scene sceneID="wmT-k5-uvx">
             <objects>
-                <viewController id="GpX-yT-ZVK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Feed Details" id="GpX-yT-ZVK" customClass="FeedDetailsViewController" customModule="SocialFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YW6-Gk-aBZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
