@@ -24,7 +24,6 @@ final class FeedSectionController: ListSectionController {
     }
     
     override func didUpdate(to object: Any) {
-        dump(object)
         feed = object as? Feed
     }
     
