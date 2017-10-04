@@ -40,6 +40,71 @@
             </objects>
             <point key="canvasLocation" x="1282" y="134"/>
         </scene>
+        <!--Create Post View Controller-->
+        <scene sceneID="ZFk-Qf-6Yu">
+            <objects>
+                <viewController storyboardIdentifier="Create Post" id="c0Z-k7-Z5e" customClass="CreatePostViewController" customModule="SocialFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VRN-Bw-XQV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vi-UF-pdt">
+                                <rect key="frame" x="60" y="38" width="299" height="16"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIP-PM-f8k">
+                                <rect key="frame" x="16" y="28" width="36" height="36"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="FR9-hQ-rbk"/>
+                                    <constraint firstAttribute="width" constant="36" id="V9t-03-nJk"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHt-4I-5f7">
+                                <rect key="frame" x="16" y="160" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.54901960780000003" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitPost:" destination="c0Z-k7-Z5e" eventType="touchUpInside" id="S0B-l3-O4A"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What's on your mind?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="18S-qn-QGr">
+                                <rect key="frame" x="16" y="72" width="343" height="80"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wdm-a1-sIi" firstAttribute="trailing" secondItem="18S-qn-QGr" secondAttribute="trailing" constant="16" id="4Jf-yQ-0Id"/>
+                            <constraint firstItem="18S-qn-QGr" firstAttribute="leading" secondItem="wdm-a1-sIi" secondAttribute="leading" constant="16" id="Cwo-fZ-wVZ"/>
+                            <constraint firstItem="QHt-4I-5f7" firstAttribute="leading" secondItem="wdm-a1-sIi" secondAttribute="leading" constant="16" id="DbW-jE-wxa"/>
+                            <constraint firstItem="6vi-UF-pdt" firstAttribute="leading" secondItem="XIP-PM-f8k" secondAttribute="trailing" constant="8" id="W5g-f3-omD"/>
+                            <constraint firstItem="XIP-PM-f8k" firstAttribute="top" secondItem="wdm-a1-sIi" secondAttribute="top" constant="8" id="bp8-D6-a8e"/>
+                            <constraint firstItem="wdm-a1-sIi" firstAttribute="trailing" secondItem="QHt-4I-5f7" secondAttribute="trailing" constant="16" id="g9N-by-Ojw"/>
+                            <constraint firstItem="wdm-a1-sIi" firstAttribute="trailing" secondItem="6vi-UF-pdt" secondAttribute="trailing" constant="16" id="hcX-ys-5c7"/>
+                            <constraint firstItem="6vi-UF-pdt" firstAttribute="centerY" secondItem="XIP-PM-f8k" secondAttribute="centerY" id="pwi-qF-nwT"/>
+                            <constraint firstItem="QHt-4I-5f7" firstAttribute="top" secondItem="18S-qn-QGr" secondAttribute="bottom" constant="8" id="s3e-gb-1yV"/>
+                            <constraint firstItem="18S-qn-QGr" firstAttribute="top" secondItem="XIP-PM-f8k" secondAttribute="bottom" constant="8" id="ss3-wa-9XZ"/>
+                            <constraint firstItem="XIP-PM-f8k" firstAttribute="leading" secondItem="wdm-a1-sIi" secondAttribute="leading" constant="16" id="uqB-cA-gwM"/>
+                            <constraint firstItem="QHt-4I-5f7" firstAttribute="top" secondItem="XIP-PM-f8k" secondAttribute="bottom" constant="96" id="xDB-ER-JCw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wdm-a1-sIi"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayNameLabel" destination="6vi-UF-pdt" id="NEY-9H-7pE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dzh-Ud-PIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2076" y="133.5832083958021"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="jOD-XI-cdM">
             <objects>

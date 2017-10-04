@@ -15,15 +15,23 @@ class FeedViewController: UIViewController {
                                  for: UIControlEvents.valueChanged)
         return refreshControl
     }()
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = CGSize(width: 375, height: 142)
+        layout.itemSize = CGSize(width: 375, height: 142)
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        collectionView.refreshControl = refreshControl
+        return collectionView
+    }()
+    var errorText: String? = "No feed."
     
     var feed = [Feed]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.refreshControl = refreshControl
-        collectionView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         view.addSubview(collectionView)
         adapter.collectionView = collectionView
         adapter.dataSource = self
@@ -47,33 +55,29 @@ class FeedViewController: UIViewController {
         provider.request(.showPost) { result in
             switch result {
             case let .success(moyaResponse):
-                do {
-                    try moyaResponse.filterSuccessfulStatusCodes()
-                    let data = try moyaResponse.mapJSON()
-                    let json = JSON(data)
-                    
-                    for (_, subJson): (String, JSON) in json {
-                        if subJson["title"].stringValue != "" {
-                            self.feed.append(Feed(id: subJson["id"].intValue, title: subJson["title"].stringValue))
-                        }
+                let data = moyaResponse.data
+                let json = JSON(data)
+                
+                for (_, subJson): (String, JSON) in json {
+                    if subJson["title"].stringValue != "" {
+                        self.feed.append(Feed(id: subJson["id"].intValue, title: subJson["title"].stringValue))
                     }
-                    self.adapter.performUpdates(animated: true, completion: nil)
-                    self.refreshControl.endRefreshing()
                 }
-                catch {
-                    print("catch error")
-                }
+                self.adapter.performUpdates(animated: true, completion: nil)
+                self.refreshControl.endRefreshing()
             case let .failure(error):
                 print("error")
                 print(error.errorDescription!)
+                self.errorText = "The Internet connection appears to be offline."
+                self.adapter.performUpdates(animated: true, completion: nil)
             }
         }
     }
     
     @objc private func createPost() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Feed Details") as! FeedDetailsViewController
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboards.createPost) as! CreatePostViewController
+        navigationController?.present(vc, animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -98,7 +102,14 @@ extension FeedViewController: ListAdapterDataSource {
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        return nil
+        let emptyView = UIView(frame: self.view.bounds)
+        let emptyLabel = UILabel(frame: CGRect(x: (view.bounds.width / 2) - 150, y: (view.bounds.height / 2) - 15, width: 300, height: 70))
+        emptyLabel.text = errorText
+        emptyLabel.textAlignment = .center
+        emptyLabel.textColor = UIColor.lightGray
+        emptyView.addSubview(emptyLabel)
+        
+        return emptyView
     }
     
 }
