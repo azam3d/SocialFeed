@@ -93,6 +93,7 @@ class FeedViewController: UIViewController {
 }
 
 extension FeedViewController: ListAdapterDataSource {
+    
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         return feed as [ListDiffable]
     }

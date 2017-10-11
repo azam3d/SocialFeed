@@ -18,10 +18,20 @@ class PhotoCell: UICollectionViewCell {
             likeHitArea.addGestureRecognizer(gesture)
         }
     }
+    @IBOutlet weak var commentHitArea: UIView! {
+        didSet {
+//            let gesture = UITapGestureRecognizer(target: self, action: #selector(likePost))
+//            commentHitArea.isUserInteractionEnabled = true
+//            commentHitArea.addGestureRecognizer(gesture)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likePost))
+        commentHitArea.isUserInteractionEnabled = true
+        commentHitArea.addGestureRecognizer(tap)
     }
     
     @objc private func likePost() {
