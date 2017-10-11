@@ -1,5 +1,4 @@
 
-import Foundation
 import IGListKit
 import SwiftyJSON
 
@@ -16,7 +15,7 @@ enum Privacy {
 
 final class Feed: ListDiffable {
     let id: Int
-//    let dateCreated: Date
+    let dateCreated: String
 //    let postType: PostType
     let title: String
 //    let likesCount: Int
@@ -24,8 +23,9 @@ final class Feed: ListDiffable {
 //    let privacy: Privacy
 //    let profileImageUrl: String
     
-    init(id: Int, title: String) {
+    init(id: Int, title: String, dateCreated: String) {
         self.id = id
+        self.dateCreated = dateCreated
         self.title = title
     }
     

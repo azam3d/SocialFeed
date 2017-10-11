@@ -3,6 +3,14 @@ import UIKit
 
 class PhotoCell: UICollectionViewCell {
     
+    var feed: Feed? {
+        didSet {
+            if let feed = feed {
+                textLabel.text = feed.title
+                dateCreated.text = feed.dateCreated
+            }
+        }
+    }
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView! {
         didSet {

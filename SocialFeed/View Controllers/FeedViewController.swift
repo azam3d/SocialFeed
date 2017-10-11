@@ -1,8 +1,8 @@
 
 import IGListKit
 import Moya
-import UIKit
 import SwiftyJSON
+import UIKit
 
 class FeedViewController: UIViewController {
 
@@ -60,7 +60,7 @@ class FeedViewController: UIViewController {
                 
                 for (_, subJson): (String, JSON) in json {
                     if subJson["title"].stringValue != "" {
-                        self.feed.append(Feed(id: subJson["id"].intValue, title: subJson["title"].stringValue))
+                        self.feed.append(Feed(id: subJson["id"].intValue, title: subJson["title"].stringValue, dateCreated: subJson["date_created"].stringValue))
                     }
                 }
                 self.adapter.performUpdates(animated: true, completion: nil)
