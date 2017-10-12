@@ -18,15 +18,18 @@ final class Feed: ListDiffable {
     let dateCreated: String
 //    let postType: PostType
     let title: String
-//    let likesCount: Int
-//    let commentCount: Int
+    let likesCount: Int
+    let commentCount: Int
 //    let privacy: Privacy
-//    let profileImageUrl: String
+    let profileImageUrl: String
     
-    init(id: Int, title: String, dateCreated: String) {
-        self.id = id
-        self.dateCreated = dateCreated
-        self.title = title
+    init(json: JSON) {
+        self.id = json["id"].intValue
+        self.dateCreated = json["date_created"].stringValue
+        self.title = json["title"].stringValue
+        self.likesCount = json["likes_count"].intValue
+        self.commentCount = json["comment_count"].intValue
+        self.profileImageUrl = json["profile_image_url"].stringValue
     }
     
     func diffIdentifier() -> NSObjectProtocol {
@@ -34,17 +37,7 @@ final class Feed: ListDiffable {
     }
     
     func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
-        return true //(object as? Feed)?.id == self.id
+        return true
     }
     
-//    private enum CodingKeys: String, CodingKey {
-//        case id
-//        case dateCreated = "date_created"
-//        case postType = "post_type"
-//        case title
-//        case likesCount = "likes_count"
-//        case commentCount = "comment_count"
-//        case privacy
-//        case profileImageUrl = "profile_image_url"
-//    }
 }

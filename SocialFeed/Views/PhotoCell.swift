@@ -33,6 +33,7 @@ class PhotoCell: UICollectionViewCell {
 //            commentHitArea.addGestureRecognizer(gesture)
         }
     }
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

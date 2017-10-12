@@ -56,11 +56,12 @@ class FeedViewController: UIViewController {
             switch result {
             case let .success(moyaResponse):
                 let data = moyaResponse.data
-                let json = JSON(data)
                 
+                let json = JSON(data)
+//                dump(json)
                 for (_, subJson): (String, JSON) in json {
                     if subJson["title"].stringValue != "" {
-                        self.feed.append(Feed(id: subJson["id"].intValue, title: subJson["title"].stringValue, dateCreated: subJson["date_created"].stringValue))
+                        self.feed.append(Feed(json: subJson))
                     }
                 }
                 self.adapter.performUpdates(animated: true, completion: nil)

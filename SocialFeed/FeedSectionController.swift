@@ -23,6 +23,14 @@ final class FeedSectionController: ListSectionController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(likePost))
         photoCell.commentHitArea.isUserInteractionEnabled = true
         photoCell.commentHitArea.addGestureRecognizer(gesture)
+        
+        photoCell.commentLabel.addGestureRecognizer(gesture)
+        
+        if let url = URL(string: feed.profileImageUrl){
+            photoCell.profileImageView.downloadedFrom(url: url)
+        } else {
+            photoCell.profileImageView.image = UIImage(named: "ic_commnet")
+        }
         return photoCell
     }
     
