@@ -20,6 +20,9 @@ final class FeedSectionController: ListSectionController {
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         let photoCell = collectionContext!.dequeueReusableCell(withNibName: Constants.Nib.photoCell, bundle: nil, for: self, at: index) as! PhotoCell
         photoCell.feed = feed
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(likePost))
+        photoCell.commentHitArea.isUserInteractionEnabled = true
+        photoCell.commentHitArea.addGestureRecognizer(gesture)
         return photoCell
     }
     
@@ -28,5 +31,9 @@ final class FeedSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) { }
+    
+    @objc func likePost() {
+        print("comment")
+    }
     
 }

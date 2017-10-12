@@ -76,8 +76,10 @@ class FeedViewController: UIViewController {
     
     @objc private func createPost() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboards.createPost) as! CreatePostViewController
-        navigationController?.present(vc, animated: true, completion: nil)
+        guard let createPostVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboards.createPost) as? CreatePostViewController else {
+            fatalError("Could not instantiate view controller createPostVC")
+        }
+        navigationController?.present(createPostVC, animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {
