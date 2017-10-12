@@ -1,0 +1,4 @@
+github "Alamofire/Alamofire" ~> 4.5
+github "Instagram/IGListKit" ~> 3.0
+github "Moya/Moya"
+github "SwiftyJSON/SwiftyJSON"
