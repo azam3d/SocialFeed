@@ -15,7 +15,7 @@ enum Privacy {
 
 final class Feed: ListDiffable {
     let id: Int
-    let dateCreated: String
+    let dateCreated: Date
 //    let postType: PostType
     let title: String
     let likesCount: Int
@@ -25,7 +25,7 @@ final class Feed: ListDiffable {
     
     init(json: JSON) {
         self.id = json["id"].intValue
-        self.dateCreated = json["date_created"].stringValue
+        self.dateCreated = json["date_created"].dateTime!
         self.title = json["title"].stringValue
         self.likesCount = json["likes_count"].intValue
         self.commentCount = json["comment_count"].intValue

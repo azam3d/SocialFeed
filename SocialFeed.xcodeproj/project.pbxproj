@@ -18,6 +18,8 @@
 		C54D70EE1F8F74BE002E1AAE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70E11F8F7476002E1AAE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C54D70F01F8F74D7002E1AAE /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70E01F8F7476002E1AAE /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C54D70F21F8F74E6002E1AAE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70E31F8F7476002E1AAE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C552C9161F951BC600185A0B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552C9151F951BC600185A0B /* DateExtension.swift */; };
+		C552C9191F95284800185A0B /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C552C91B1F95284800185A0B /* PhotoCell.xib */; };
 		C563AA0A1F7C23E0002DD4FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA091F7C23E0002DD4FF /* AppDelegate.swift */; };
 		C563AA0C1F7C23E0002DD4FF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA0B1F7C23E0002DD4FF /* FeedViewController.swift */; };
 		C563AA0F1F7C23E0002DD4FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C563AA0D1F7C23E0002DD4FF /* Main.storyboard */; };
@@ -26,7 +28,9 @@
 		C563AA1F1F7C23E0002DD4FF /* SocialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA1E1F7C23E0002DD4FF /* SocialFeedTests.swift */; };
 		C59AD24D1F7EF32900146853 /* FeedSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AD24C1F7EF32900146853 /* FeedSectionController.swift */; };
 		C59AD24F1F7F653B00146853 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AD24E1F7F653B00146853 /* PhotoCell.swift */; };
-		C59AD2511F7F68C400146853 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C59AD2501F7F68C400146853 /* PhotoCell.xib */; };
+		C5FA475F1F9225CD005DDED9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA475E1F9225CD005DDED9 /* Network.swift */; };
+		C5FA476D1F94EF84005DDED9 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = C5FA476C1F94EF84005DDED9 /* Localizable.stringsdict */; };
+		C5FA476F1F950752005DDED9 /* JSONExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA476E1F950752005DDED9 /* JSONExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		C54D70E11F8F7476002E1AAE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		C54D70E21F8F7476002E1AAE /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = SOURCE_ROOT; };
 		C54D70E31F8F7476002E1AAE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
+		C552C9151F951BC600185A0B /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		C552C91A1F95284800185A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PhotoCell.xib; sourceTree = "<group>"; };
+		C552C91D1F95285100185A0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PhotoCell.strings; sourceTree = "<group>"; };
+		C552C91F1F95285200185A0B /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/PhotoCell.strings; sourceTree = "<group>"; };
 		C563AA061F7C23DF002DD4FF /* SocialFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C563AA091F7C23E0002DD4FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C563AA0B1F7C23E0002DD4FF /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +89,11 @@
 		C563AA201F7C23E0002DD4FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C59AD24C1F7EF32900146853 /* FeedSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionController.swift; sourceTree = "<group>"; };
 		C59AD24E1F7F653B00146853 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
-		C59AD2501F7F68C400146853 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		C5FA475E1F9225CD005DDED9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		C5FA47671F947601005DDED9 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C5FA47681F947601005DDED9 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Main.strings; sourceTree = "<group>"; };
+		C5FA476C1F94EF84005DDED9 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		C5FA476E1F950752005DDED9 /* JSONExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				C59AD24E1F7F653B00146853 /* PhotoCell.swift */,
-				C59AD2501F7F68C400146853 /* PhotoCell.xib */,
+				C552C91B1F95284800185A0B /* PhotoCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +190,10 @@
 				C563AA091F7C23E0002DD4FF /* AppDelegate.swift */,
 				C5382D371F82673600B67F43 /* Constants.swift */,
 				C5382D331F822B9C00B67F43 /* Extensions.swift */,
+				C552C9151F951BC600185A0B /* DateExtension.swift */,
+				C5FA476E1F950752005DDED9 /* JSONExtension.swift */,
+				C5FA476C1F94EF84005DDED9 /* Localizable.stringsdict */,
+				C5FA475E1F9225CD005DDED9 /* Network.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -271,6 +287,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ms,
 			);
 			mainGroup = C563A9FD1F7C23DF002DD4FF;
 			productRefGroup = C563AA071F7C23DF002DD4FF /* Products */;
@@ -288,10 +305,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59AD2511F7F68C400146853 /* PhotoCell.xib in Resources */,
+				C5FA476D1F94EF84005DDED9 /* Localizable.stringsdict in Resources */,
 				C563AA141F7C23E0002DD4FF /* LaunchScreen.storyboard in Resources */,
 				C563AA111F7C23E0002DD4FF /* Assets.xcassets in Resources */,
 				C563AA0F1F7C23E0002DD4FF /* Main.storyboard in Resources */,
+				C552C9191F95284800185A0B /* PhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,10 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C59AD24F1F7F653B00146853 /* PhotoCell.swift in Sources */,
+				C5FA476F1F950752005DDED9 /* JSONExtension.swift in Sources */,
 				C5382D001F81A3D000B67F43 /* Feed.swift in Sources */,
 				C59AD24D1F7EF32900146853 /* FeedSectionController.swift in Sources */,
 				C5382D341F822B9C00B67F43 /* Extensions.swift in Sources */,
+				C552C9161F951BC600185A0B /* DateExtension.swift in Sources */,
 				C563AA0C1F7C23E0002DD4FF /* FeedViewController.swift in Sources */,
+				C5FA475F1F9225CD005DDED9 /* Network.swift in Sources */,
 				C5382D381F82673600B67F43 /* Constants.swift in Sources */,
 				C5382D051F820D0B00B67F43 /* FeedDetailsViewController.swift in Sources */,
 				C563AA0A1F7C23E0002DD4FF /* AppDelegate.swift in Sources */,
@@ -341,10 +362,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C552C91B1F95284800185A0B /* PhotoCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C552C91A1F95284800185A0B /* Base */,
+				C552C91D1F95285100185A0B /* en */,
+				C552C91F1F95285200185A0B /* ms */,
+			);
+			name = PhotoCell.xib;
+			sourceTree = "<group>";
+		};
 		C563AA0D1F7C23E0002DD4FF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C563AA0E1F7C23E0002DD4FF /* Base */,
+				C5FA47681F947601005DDED9 /* ms */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -353,6 +385,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C563AA131F7C23E0002DD4FF /* Base */,
+				C5FA47671F947601005DDED9 /* ms */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -364,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -421,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -477,7 +512,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SocialFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -498,7 +532,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SocialFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

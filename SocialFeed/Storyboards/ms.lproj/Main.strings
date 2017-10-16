@@ -1,0 +1,9 @@
+
+/* Class = "UITextView"; text = "What's on your mind?"; ObjectID = "18S-qn-QGr"; */
+"18S-qn-QGr.text" = "What's on your mind?";
+
+/* Class = "UILabel"; text = "Display Name"; ObjectID = "6vi-UF-pdt"; */
+"6vi-UF-pdt.text" = "Display Name";
+
+/* Class = "UIButton"; normalTitle = "Post"; ObjectID = "QHt-4I-5f7"; */
+"QHt-4I-5f7.normalTitle" = "Post";

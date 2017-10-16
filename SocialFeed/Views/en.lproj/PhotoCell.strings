@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "6U0-B2-Hog"; */
+"6U0-B2-Hog.text" = "Date";
+
+/* Class = "UILabel"; text = "Like"; ObjectID = "Inm-vL-Rre"; */
+"Inm-vL-Rre.text" = "Like";
+
+/* Class = "UILabel"; text = "5 Likes, 10 Comments"; ObjectID = "SpM-Hc-YfI"; */
+"SpM-Hc-YfI.text" = "5 Likes, 10 Comments";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "qvg-mi-kdH"; */
+"qvg-mi-kdH.text" = "Status";
+
+/* Class = "UILabel"; text = "Comment"; ObjectID = "wEj-GK-10m"; */
+"wEj-GK-10m.text" = "Comment";
+
+/* Class = "UILabel"; text = "Display Name"; ObjectID = "ybE-DR-2TW"; */
+"ybE-DR-2TW.text" = "Display Name";

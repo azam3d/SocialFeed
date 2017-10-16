@@ -25,7 +25,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C71-Qm-Iz8">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C71-Qm-Iz8">
                             <rect key="frame" x="8" y="8" width="36" height="36"/>
                             <color key="backgroundColor" red="0.87422668150000005" green="0.87422668150000005" blue="0.87422668150000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
@@ -34,10 +34,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U0-B2-Hog">
-                            <rect key="frame" x="52" y="29" width="200" height="14.5"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="200" id="ZJf-Jg-qKq"/>
-                            </constraints>
+                            <rect key="frame" x="52" y="29" width="26.5" height="14.5"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -51,41 +48,55 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9z-e0-Ntx" userLabel="Like View">
                             <rect key="frame" x="0.0" y="98" width="187.5" height="44"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inm-vL-Rre">
-                                    <rect key="frame" x="90" y="14" width="32" height="18"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inm-vL-Rre">
+                                    <rect key="frame" x="90" y="12.5" width="29.5" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" red="0.43529411764705883" green="0.41960784313725491" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_like" highlightedImage="ic_liked" translatesAutoresizingMaskIntoConstraints="NO" id="6Og-xP-GDi">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_like" highlightedImage="ic_liked" translatesAutoresizingMaskIntoConstraints="NO" id="6Og-xP-GDi">
                                     <rect key="frame" x="66" y="14" width="18" height="16"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="18" id="1F4-qm-zOm"/>
+                                        <constraint firstAttribute="height" constant="16" id="P1j-hi-Gcr"/>
+                                    </constraints>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.87422668150000005" green="0.87422668150000005" blue="0.87422668150000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
+                                <constraint firstItem="6Og-xP-GDi" firstAttribute="leading" secondItem="z9z-e0-Ntx" secondAttribute="leading" constant="66" id="G38-2D-oys"/>
+                                <constraint firstItem="6Og-xP-GDi" firstAttribute="centerY" secondItem="z9z-e0-Ntx" secondAttribute="centerY" id="GEV-rH-Lu6"/>
+                                <constraint firstItem="Inm-vL-Rre" firstAttribute="centerY" secondItem="z9z-e0-Ntx" secondAttribute="centerY" id="OsF-i3-omM"/>
+                                <constraint firstItem="Inm-vL-Rre" firstAttribute="leading" secondItem="6Og-xP-GDi" secondAttribute="trailing" constant="6" id="fRb-1e-owR"/>
                                 <constraint firstAttribute="height" constant="44" id="nat-gP-gGG"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Inm-vL-Rre" secondAttribute="trailing" id="q10-6F-9yz"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5c-gu-by8" userLabel="Comment View">
                             <rect key="frame" x="188.5" y="98" width="186.5" height="44"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEj-GK-10m">
-                                    <rect key="frame" x="74" y="14" width="84" height="16"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEj-GK-10m">
+                                    <rect key="frame" x="74" y="12.5" width="71" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" red="0.43529411759999997" green="0.41960784309999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_comment" translatesAutoresizingMaskIntoConstraints="NO" id="QAR-fg-Czl">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_comment" translatesAutoresizingMaskIntoConstraints="NO" id="QAR-fg-Czl">
                                     <rect key="frame" x="49" y="14" width="20" height="16"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16" id="SNH-gl-XF2"/>
+                                        <constraint firstAttribute="width" constant="20" id="vJR-p6-HMS"/>
+                                    </constraints>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="wEj-GK-10m" firstAttribute="leading" secondItem="QAR-fg-Czl" secondAttribute="trailing" constant="5" id="AWb-Gb-uO2"/>
                                 <constraint firstAttribute="height" constant="44" id="AeI-KL-Mo7"/>
+                                <constraint firstItem="QAR-fg-Czl" firstAttribute="leading" secondItem="r5c-gu-by8" secondAttribute="leading" constant="49" id="Rae-oz-53Y"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wEj-GK-10m" secondAttribute="trailing" constant="20" symbolic="YES" id="YOm-h3-xpA"/>
+                                <constraint firstItem="QAR-fg-Czl" firstAttribute="centerY" secondItem="r5c-gu-by8" secondAttribute="centerY" id="kcN-0c-UKX"/>
+                                <constraint firstItem="wEj-GK-10m" firstAttribute="centerY" secondItem="r5c-gu-by8" secondAttribute="centerY" id="vPG-fB-evZ"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zj-pj-PuH" userLabel="Line View">
@@ -111,6 +122,7 @@
                         <constraint firstAttribute="bottom" secondItem="9Zj-pj-PuH" secondAttribute="bottom" constant="44" id="E3B-GU-rpZ"/>
                         <constraint firstAttribute="bottom" secondItem="r5c-gu-by8" secondAttribute="bottom" id="EDs-qw-4q3"/>
                         <constraint firstAttribute="trailing" secondItem="SpM-Hc-YfI" secondAttribute="trailing" constant="8" id="EgW-PH-oGw"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6U0-B2-Hog" secondAttribute="trailing" constant="20" symbolic="YES" id="GAP-k6-vSE"/>
                         <constraint firstAttribute="trailing" secondItem="r5c-gu-by8" secondAttribute="trailing" id="M3d-sc-nR3"/>
                         <constraint firstAttribute="bottom" secondItem="z9z-e0-Ntx" secondAttribute="bottom" id="MBu-gk-Elf"/>
                         <constraint firstItem="C71-Qm-Iz8" firstAttribute="leading" secondItem="SEe-Jn-7Lf" secondAttribute="leading" constant="8" id="NsP-r5-LJg"/>

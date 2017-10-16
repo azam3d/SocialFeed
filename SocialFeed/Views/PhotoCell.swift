@@ -7,7 +7,7 @@ class PhotoCell: UICollectionViewCell {
         didSet {
             if let feed = feed {
                 textLabel.text = feed.title
-                dateCreated.text = feed.dateCreated
+                dateCreated.text = feed.dateCreated.toRelativeTimeString()
             }
         }
     }
@@ -38,12 +38,13 @@ class PhotoCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(likePost))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likePost(_:)))
         commentHitArea.isUserInteractionEnabled = true
         commentHitArea.addGestureRecognizer(tap)
     }
     
-    @objc private func likePost() {
+    @objc private func likePost(_ sender: UIView) {
+        dump(sender)
         print("like")
     }
     
