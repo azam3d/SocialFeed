@@ -7,7 +7,6 @@ class PhotoCell: UICollectionViewCell {
         didSet {
             if let feed = feed {
                 textLabel.text = feed.title
-                dateCreated.text = feed.dateCreated.toRelativeTimeString()
             }
         }
     }
@@ -26,26 +25,27 @@ class PhotoCell: UICollectionViewCell {
             likeHitArea.addGestureRecognizer(gesture)
         }
     }
-    @IBOutlet weak var commentHitArea: UIView! {
-        didSet {
-//            let gesture = UITapGestureRecognizer(target: self, action: #selector(likePost))
-//            commentHitArea.isUserInteractionEnabled = true
-//            commentHitArea.addGestureRecognizer(gesture)
-        }
-    }
+    @IBOutlet weak var commentHitArea: UIView!
     @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(likePost(_:)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(commentPost))
         commentHitArea.isUserInteractionEnabled = true
         commentHitArea.addGestureRecognizer(tap)
     }
     
-    @objc private func likePost(_ sender: UIView) {
-        dump(sender)
+    @objc private func likePost() {
         print("like")
+    }
+    
+    @objc private func commentPost() {
+        print("comment")
+    }
+    
+    @IBAction func openDetails(_ sender: Any) {
+        print("open details")
     }
     
 }

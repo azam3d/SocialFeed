@@ -36,7 +36,7 @@ class FeedViewController: UIViewController {
         adapter.collectionView = collectionView
         adapter.dataSource = self
         
-        navigationItem.title = "Feed"
+        navigationItem.title = NSLocalizedString("Feed", comment: "Title for FeedVC")
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPost))
@@ -50,15 +50,28 @@ class FeedViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = view.bounds
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        feed = []
+    }
+    
     @objc private func fetchData() {
-        let provider = MoyaProvider<FeedService>()
-        provider.request(.showPost) { result in
+        let provider = MoyaProvider<FeedService>(plugins: [NetworkLoggerPlugin(verbose: true)])
+        provider.request(.showPostFiltered(albumId: 1)) { result in
             switch result {
             case let .success(moyaResponse):
                 let data = moyaResponse.data
                 
                 let json = JSON(data)
-//                dump(json)
+                
+                print("json: ")
+                dump(json)
+                
                 for (_, subJson): (String, JSON) in json {
                     if subJson["title"].stringValue != "" {
                         self.feed.append(Feed(json: subJson))
@@ -81,16 +94,6 @@ class FeedViewController: UIViewController {
             fatalError("Could not instantiate view controller createPostVC")
         }
         navigationController?.present(createPostVC, animated: true, completion: nil)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        feed = []
     }
     
 }

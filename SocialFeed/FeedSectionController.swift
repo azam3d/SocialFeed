@@ -20,13 +20,13 @@ final class FeedSectionController: ListSectionController {
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         let photoCell = collectionContext!.dequeueReusableCell(withNibName: Constants.Nib.photoCell, bundle: nil, for: self, at: index) as! PhotoCell
         photoCell.feed = feed
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(likePost))
-        photoCell.commentHitArea.isUserInteractionEnabled = true
-        photoCell.commentHitArea.addGestureRecognizer(gesture)
+//        let gesture = UITapGestureRecognizer(target: self, action: #selector(likePost))
+//        photoCell.commentHitArea.isUserInteractionEnabled = true
+//        photoCell.commentHitArea.addGestureRecognizer(gesture)
         
-        photoCell.commentLabel.addGestureRecognizer(gesture)
-        
-        if let url = URL(string: feed.profileImageUrl){
+        if let url = URL(string: feed.url) {
+            print("feed url: ")
+            print(feed.url)
             photoCell.profileImageView.downloadedFrom(url: url)
         } else {
             photoCell.profileImageView.image = UIImage(named: "ic_commnet")
@@ -38,7 +38,7 @@ final class FeedSectionController: ListSectionController {
         feed = object as? Feed
     }
     
-    override func didSelectItem(at index: Int) { }
+//    override func didSelectItem(at index: Int) { }
     
     @objc func likePost() {
         print("comment")
