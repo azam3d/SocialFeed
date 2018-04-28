@@ -46,7 +46,6 @@ class FeedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -68,8 +67,6 @@ class FeedViewController: UIViewController {
                 let data = moyaResponse.data
                 
                 let json = JSON(data)
-                
-                print("json: ")
                 dump(json)
                 
                 for (_, subJson): (String, JSON) in json {
@@ -90,6 +87,7 @@ class FeedViewController: UIViewController {
     
     @objc private func createPost() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         guard let createPostVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboards.createPost) as? CreatePostViewController else {
             fatalError("Could not instantiate view controller createPostVC")
         }
@@ -109,11 +107,12 @@ extension FeedViewController: ListAdapterDataSource {
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        let emptyView = UIView(frame: self.view.bounds)
         let emptyLabel = UILabel(frame: CGRect(x: (view.bounds.width / 2) - 150, y: (view.bounds.height / 2) - 15, width: 300, height: 70))
         emptyLabel.text = errorText
         emptyLabel.textAlignment = .center
         emptyLabel.textColor = UIColor.lightGray
+        
+        let emptyView = UIView(frame: self.view.bounds)
         emptyView.addSubview(emptyLabel)
         
         return emptyView

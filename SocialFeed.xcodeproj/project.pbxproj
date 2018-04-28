@@ -113,8 +113,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5643DAD20434EA900460945 /* Alamofire.framework in Frameworks */,
-				C5643DB120434EA900460945 /* Moya.framework in Frameworks */,
 				C5643DAF20434EA900460945 /* IGListKit.framework in Frameworks */,
+				C5643DB120434EA900460945 /* Moya.framework in Frameworks */,
 				C5643DB320434EA900460945 /* Result.framework in Frameworks */,
 				C5643DB520434EA900460945 /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -160,8 +160,7 @@
 		C563AA081F7C23DF002DD4FF /* SocialFeed */ = {
 			isa = PBXGroup;
 			children = (
-				C5382CFD1F817EAD00B67F43 /* FeedService.swift */,
-				C59AD24C1F7EF32900146853 /* FeedSectionController.swift */,
+				C588F6852044835500619423 /* Networking */,
 				C59AD2201F7CDC6100146853 /* Shared */,
 				C59AD21E1F7CDC0F00146853 /* Storyboards */,
 				C5382D321F822B5D00B67F43 /* Model */,
@@ -180,6 +179,14 @@
 				C563AA201F7C23E0002DD4FF /* Info.plist */,
 			);
 			path = SocialFeedTests;
+			sourceTree = "<group>";
+		};
+		C588F6852044835500619423 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C5382CFD1F817EAD00B67F43 /* FeedService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		C59AD21E1F7CDC0F00146853 /* Storyboards */ = {
@@ -223,6 +230,7 @@
 				C5382D351F824FFA00B67F43 /* CreatePostViewController.swift */,
 				C5382D041F820D0A00B67F43 /* FeedDetailsViewController.swift */,
 				C563AA0B1F7C23E0002DD4FF /* FeedViewController.swift */,
+				C59AD24C1F7EF32900146853 /* FeedSectionController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -285,7 +293,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Twebble;
 				TargetAttributes = {
 					C563AA051F7C23DF002DD4FF = {
@@ -430,6 +438,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -437,6 +446,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -488,6 +498,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -495,6 +506,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
