@@ -18,7 +18,9 @@ final class FeedSectionController: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        let photoCell = collectionContext!.dequeueReusableCell(withNibName: Constants.Nib.photoCell, bundle: nil, for: self, at: index) as! PhotoCell
+        guard let photoCell = collectionContext!.dequeueReusableCell(withNibName: Constants.Nib.photoCell, bundle: nil, for: self, at: index) as? PhotoCell else {
+            fatalError()
+        }
         photoCell.feed = feed
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(likePost))

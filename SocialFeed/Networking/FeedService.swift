@@ -7,6 +7,7 @@ enum FeedService {
 }
 
 extension FeedService: TargetType {
+    
     var baseURL: URL {
         return URL(string: "https://jsonplaceholder.typicode.com")!
     }

@@ -18,6 +18,7 @@ class FeedDetailsViewController: UIViewController {
     }()
     @IBOutlet weak var stickyTextView: UITextView!
     var errorText: String? = "No feed."
+    @IBOutlet weak var heroImage: UIImageView!
     
     var combine = [Any]()
 //    var comments = [Comment]()
@@ -30,6 +31,9 @@ class FeedDetailsViewController: UIViewController {
         adapter.collectionView = collectionView
         adapter.dataSource = self
         navigationController?.navigationBar.prefersLargeTitles = false
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(openImageVC))
+        heroImage.addGestureRecognizer(tap)
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,6 +44,13 @@ class FeedDetailsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @objc private func openImageVC() {
+        let vc = ImageViewController()
+        present(vc, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension FeedDetailsViewController: ListAdapterDataSource {

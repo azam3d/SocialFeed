@@ -36,6 +36,7 @@
 		C5643DB620434EA900460945 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70E31F8F7476002E1AAE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C59AD24D1F7EF32900146853 /* FeedSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AD24C1F7EF32900146853 /* FeedSectionController.swift */; };
 		C59AD24F1F7F653B00146853 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AD24E1F7F653B00146853 /* PhotoCell.swift */; };
+		C59BD09921F20EB100A4D556 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59BD09821F20EB100A4D556 /* ImageViewController.swift */; };
 		C5FA475F1F9225CD005DDED9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA475E1F9225CD005DDED9 /* Network.swift */; };
 		C5FA476D1F94EF84005DDED9 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = C5FA476C1F94EF84005DDED9 /* Localizable.stringsdict */; };
 		C5FA476F1F950752005DDED9 /* JSONExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA476E1F950752005DDED9 /* JSONExtension.swift */; };
@@ -100,6 +101,7 @@
 		C563AA201F7C23E0002DD4FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C59AD24C1F7EF32900146853 /* FeedSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionController.swift; sourceTree = "<group>"; };
 		C59AD24E1F7F653B00146853 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		C59BD09821F20EB100A4D556 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		C5FA475E1F9225CD005DDED9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		C5FA47671F947601005DDED9 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C5FA47681F947601005DDED9 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Main.strings; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				C5382D041F820D0A00B67F43 /* FeedDetailsViewController.swift */,
 				C563AA0B1F7C23E0002DD4FF /* FeedViewController.swift */,
 				C59AD24C1F7EF32900146853 /* FeedSectionController.swift */,
+				C59BD09821F20EB100A4D556 /* ImageViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				C5382D341F822B9C00B67F43 /* Extensions.swift in Sources */,
 				C552C9161F951BC600185A0B /* DateExtension.swift in Sources */,
 				C563AA0C1F7C23E0002DD4FF /* FeedViewController.swift in Sources */,
+				C59BD09921F20EB100A4D556 /* ImageViewController.swift in Sources */,
 				C5FA475F1F9225CD005DDED9 /* Network.swift in Sources */,
 				C5382D381F82673600B67F43 /* Constants.swift in Sources */,
 				C5382D051F820D0B00B67F43 /* FeedDetailsViewController.swift in Sources */,
@@ -542,7 +546,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93JTZQ4MUJ;
+				DEVELOPMENT_TEAM = B94C7U72JS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -562,7 +566,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93JTZQ4MUJ;
+				DEVELOPMENT_TEAM = B94C7U72JS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
