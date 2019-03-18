@@ -12,7 +12,7 @@ class FeedViewController: UIViewController {
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(fetchData),
-                                 for: UIControlEvents.valueChanged)
+                                 for: UIControl.Event.valueChanged)
         return refreshControl
     }()
     lazy var collectionView: UICollectionView = {
