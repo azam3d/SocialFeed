@@ -1,121 +1,144 @@
 
-import IGListKit
 import Moya
 import SwiftyJSON
 import UIKit
 
 class FeedViewController: UIViewController {
 
-    lazy var adapter: ListAdapter = {
-        return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-    }()
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+            collectionView.refreshControl = refreshControl
+            
+        }
+    }
+    
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(fetchData),
                                  for: UIControl.Event.valueChanged)
         return refreshControl
     }()
-    lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: 375, height: 142)
-        layout.itemSize = CGSize(width: 375, height: 142)
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        collectionView.refreshControl = refreshControl
-        return collectionView
-    }()
-    var errorText: String? = "No feed."
+    var feeds = [Feed]()
     
-    var feed = [Feed]()
+//    lazy var collectionView: UICollectionView = {
+//        let layout = UICollectionViewFlowLayout()
+//        layout.estimatedItemSize = CGSize(width: view.bounds.width, height: 142)
+//        layout.itemSize = CGSize(width: view.bounds.width, height: 142)
+//
+//        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    
+//        return collectionView
+//    }()
+    var errorText = "No feed."
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(collectionView)
-        adapter.collectionView = collectionView
-        adapter.dataSource = self
-        
+        collectionView.dataSource = self
+//        collectionView.collectionViewLayout = UICollectionViewDelegateFlowLayout
+
         navigationItem.title = NSLocalizedString("Feed", comment: "Title for FeedVC")
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPost))
-        
+
         fetchData()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        feed = []
+        feeds = []
     }
-    
+
     @objc private func fetchData() {
         let provider = MoyaProvider<FeedService>(plugins: [NetworkLoggerPlugin(verbose: true)])
-        provider.request(.showPostFiltered(albumId: 1)) { result in
+        provider.request(.showPostFiltered(albumId: 1)) { [weak self] result in
             switch result {
             case let .success(moyaResponse):
                 let data = moyaResponse.data
-                
+
                 let json = JSON(data)
                 dump(json)
-                
+
                 for (_, subJson): (String, JSON) in json {
                     if subJson["title"].stringValue != "" {
-                        self.feed.append(Feed(json: subJson))
+                        self?.feeds.append(Feed(json: subJson))
                     }
                 }
-                self.adapter.performUpdates(animated: true, completion: nil)
-                self.refreshControl.endRefreshing()
+                self?.collectionView.reloadData()
+                self?.refreshControl.endRefreshing()
             case let .failure(error):
                 print("error")
                 print(error.errorDescription!)
-                self.errorText = "The Internet connection appears to be offline."
-                self.adapter.performUpdates(animated: true, completion: nil)
+                self?.errorText = "The Internet connection appears to be offline."
             }
         }
     }
-    
+
     @objc private func createPost() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        guard let createPostVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboards.createPost) as? CreatePostViewController else {
+
+        guard let createPostVC = storyboard.instantiateViewController(withIdentifier: Constants.storyboards.createPost) as? CreatePostViewController else {
             fatalError("Could not instantiate view controller createPostVC")
         }
         navigationController?.present(createPostVC, animated: true, completion: nil)
     }
+
+//    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+//        let emptyLabel = UILabel(frame: CGRect(x: (view.bounds.width / 2) - 150, y: (view.bounds.height / 2) - 15, width: 300, height: 70))
+//        emptyLabel.text = errorText
+//        emptyLabel.textAlignment = .center
+//        emptyLabel.textColor = UIColor.lightGray
+//
+//        let emptyView = UIView(frame: self.view.bounds)
+//        emptyView.addSubview(emptyLabel)
+//
+//        return emptyView
+//    }
+    
+    @objc func likePost() {
+        print("comment")
+    }
     
 }
 
-extension FeedViewController: ListAdapterDataSource {
+extension FeedViewController: UICollectionViewDataSource {
     
-    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return feed as [ListDiffable]
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return feeds.count
     }
     
-    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return FeedSectionController()
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.nib.photoCell, for: indexPath) as? PhotoCell else {
+            fatalError()
+        }
+        photoCell.feed = feeds[indexPath.row]
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(likePost))
+        photoCell.commentHitArea.isUserInteractionEnabled = true
+        photoCell.commentHitArea.addGestureRecognizer(gesture)
+
+//        if let url = URL(string: feeds[indexPath.row].url) {
+//            photoCell.profileImageView.downloadedFrom(url: url)
+//        } else {
+//            photoCell.profileImageView.image = UIImage(named: "ic_comment")
+//        }
+        return photoCell
     }
     
-    func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        let emptyLabel = UILabel(frame: CGRect(x: (view.bounds.width / 2) - 150, y: (view.bounds.height / 2) - 15, width: 300, height: 70))
-        emptyLabel.text = errorText
-        emptyLabel.textAlignment = .center
-        emptyLabel.textColor = UIColor.lightGray
-        
-        let emptyView = UIView(frame: self.view.bounds)
-        emptyView.addSubview(emptyLabel)
-        
-        return emptyView
+    
+}
+
+extension FeedViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.bounds.width, height: 180.0)
     }
     
 }

@@ -13,7 +13,7 @@ enum Privacy {
     case privatePost
 }
 
-final class Feed: ListDiffable {
+final class Feed {
     let id: Int
     let title: String
     let url: String
@@ -24,14 +24,6 @@ final class Feed: ListDiffable {
         self.title = json["title"].stringValue
         self.url = json["url"].stringValue
         self.albumId = json["albumId"].intValue
-    }
-    
-    func diffIdentifier() -> NSObjectProtocol {
-        return id as NSNumber
-    }
-    
-    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
-        return true
     }
     
 }

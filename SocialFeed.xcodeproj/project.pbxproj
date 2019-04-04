@@ -14,9 +14,7 @@
 		C5382D361F824FFA00B67F43 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5382D351F824FFA00B67F43 /* CreatePostViewController.swift */; };
 		C5382D381F82673600B67F43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5382D371F82673600B67F43 /* Constants.swift */; };
 		C552C9161F951BC600185A0B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552C9151F951BC600185A0B /* DateExtension.swift */; };
-		C552C9191F95284800185A0B /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C552C91B1F95284800185A0B /* PhotoCell.xib */; };
 		C552C9221F95F10400185A0B /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552C9201F95F10400185A0B /* TextCell.swift */; };
-		C552C9231F95F10400185A0B /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C552C9211F95F10400185A0B /* TextCell.xib */; };
 		C552C9251F97CB7C00185A0B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C552C9241F97CB7B00185A0B /* Localizable.strings */; };
 		C563AA0A1F7C23E0002DD4FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA091F7C23E0002DD4FF /* AppDelegate.swift */; };
 		C563AA0C1F7C23E0002DD4FF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA0B1F7C23E0002DD4FF /* FeedViewController.swift */; };
@@ -70,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C51B2BD72243EE9600108C37 /* StyleGuide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StyleGuide.md; sourceTree = "<group>"; };
 		C5382CFD1F817EAD00B67F43 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		C5382CFF1F81A3D000B67F43 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		C5382D041F820D0A00B67F43 /* FeedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailsViewController.swift; sourceTree = "<group>"; };
@@ -82,11 +81,7 @@
 		C54D70E21F8F7476002E1AAE /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = SOURCE_ROOT; };
 		C54D70E31F8F7476002E1AAE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		C552C9151F951BC600185A0B /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		C552C91A1F95284800185A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PhotoCell.xib; sourceTree = "<group>"; };
-		C552C91D1F95285100185A0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PhotoCell.strings; sourceTree = "<group>"; };
-		C552C91F1F95285200185A0B /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/PhotoCell.strings; sourceTree = "<group>"; };
 		C552C9201F95F10400185A0B /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
-		C552C9211F95F10400185A0B /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		C552C9241F97CB7B00185A0B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C563AA061F7C23DF002DD4FF /* SocialFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C563AA091F7C23E0002DD4FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +163,7 @@
 				C59AD21F1F7CDC3500146853 /* Views */,
 				C563AA101F7C23E0002DD4FF /* Assets.xcassets */,
 				C563AA151F7C23E0002DD4FF /* Info.plist */,
+				C51B2BD72243EE9600108C37 /* StyleGuide.md */,
 			);
 			path = SocialFeed;
 			sourceTree = "<group>";
@@ -202,9 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				C59AD24E1F7F653B00146853 /* PhotoCell.swift */,
-				C552C91B1F95284800185A0B /* PhotoCell.xib */,
 				C552C9201F95F10400185A0B /* TextCell.swift */,
-				C552C9211F95F10400185A0B /* TextCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,13 +328,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C552C9231F95F10400185A0B /* TextCell.xib in Resources */,
 				C5FA476D1F94EF84005DDED9 /* Localizable.stringsdict in Resources */,
 				C563AA141F7C23E0002DD4FF /* LaunchScreen.storyboard in Resources */,
 				C552C9251F97CB7C00185A0B /* Localizable.strings in Resources */,
 				C563AA111F7C23E0002DD4FF /* Assets.xcassets in Resources */,
 				C563AA0F1F7C23E0002DD4FF /* Main.storyboard in Resources */,
-				C552C9191F95284800185A0B /* PhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,16 +386,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C552C91B1F95284800185A0B /* PhotoCell.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C552C91A1F95284800185A0B /* Base */,
-				C552C91D1F95285100185A0B /* en */,
-				C552C91F1F95285200185A0B /* ms */,
-			);
-			name = PhotoCell.xib;
-			sourceTree = "<group>";
-		};
 		C563AA0D1F7C23E0002DD4FF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -482,6 +464,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -534,6 +517,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -544,7 +528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93JTZQ4MUJ;
+				DEVELOPMENT_TEAM = B94C7U72JS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -564,7 +548,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93JTZQ4MUJ;
+				DEVELOPMENT_TEAM = B94C7U72JS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

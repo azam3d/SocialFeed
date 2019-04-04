@@ -1,7 +1,7 @@
 
 import Moya
 import SwiftyJSON
-/*
+
 struct Network {
     static let provider = MoyaProvider<FeedService>(endpointClosure: endpointClosure)
     
@@ -33,4 +33,3 @@ struct Network {
         }
     }
 }
-*/

@@ -18,7 +18,7 @@ final class FeedSectionController: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        guard let photoCell = collectionContext!.dequeueReusableCell(withNibName: Constants.Nib.photoCell, bundle: nil, for: self, at: index) as? PhotoCell else {
+        guard let photoCell = collectionContext!.dequeueReusableCell(withNibName: Constants.nib.photoCell, bundle: nil, for: self, at: index) as? PhotoCell else {
             fatalError()
         }
         photoCell.feed = feed

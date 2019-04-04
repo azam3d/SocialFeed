@@ -6,7 +6,7 @@ class PhotoCell: UICollectionViewCell {
     var feed: Feed? {
         didSet {
             if let feed = feed {
-                textLabel.text = feed.title
+//                textLabel.text = feed.title
             }
         }
     }
@@ -32,8 +32,8 @@ class PhotoCell: UICollectionViewCell {
         super.awakeFromNib()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(commentPost))
-        commentHitArea.isUserInteractionEnabled = true
-        commentHitArea.addGestureRecognizer(tap)
+//        commentHitArea.isUserInteractionEnabled = true
+//        commentHitArea.addGestureRecognizer(tap)
     }
     
     @objc private func likePost() {
