@@ -9,16 +9,16 @@
 
 ## Libraries
 - Alamofire
--Moya
+- Moya
 - Kingfisher
-SwiftyJSON
+- SwiftyJSON
 
 ## Components
-Collectionview + prefetching
-Tail loading
-Empty, loading, loaded, error state
-Shimmer
-Lazy loading image
-Localization
-Unit test
-UI test
+- Collectionview + prefetching
+- Tail loading
+- Empty, loading, loaded, error state
+- Shimmer
+- Lazy loading image
+- Localization
+- Unit test
+- UI test
