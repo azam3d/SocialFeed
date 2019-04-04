@@ -3,14 +3,14 @@
 ## Design Patterns
 - Coordinator
 - Result type
-State Pattern
-MVVM
-Codable
+- State Pattern
+- MVVM
+- Codable
 
 ## Libraries
-Alamofire
-Moya
-Kingfisher
+- Alamofire
+-Moya
+- Kingfisher
 SwiftyJSON
 
 ## Components
