@@ -1,8 +1,8 @@
 # SocialFeed
 
 ## Design Patterns
-Coordinator
-Result type
+- Coordinator
+- Result type
 State Pattern
 MVVM
 Codable
