@@ -13,7 +13,7 @@ enum Privacy {
     case privatePost
 }
 
-final class Feed {
+struct Feed {
     let id: Int
     let title: String
     let url: String

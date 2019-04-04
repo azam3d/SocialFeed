@@ -1,7 +1,7 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController {
+final class CreatePostViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView! {
         didSet {

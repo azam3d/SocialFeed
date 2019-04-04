@@ -2,7 +2,7 @@
 import IGListKit
 import UIKit
 
-class FeedDetailsViewController: UIViewController {
+final class FeedDetailsViewController: UIViewController {
     
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)

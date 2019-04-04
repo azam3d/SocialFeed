@@ -3,7 +3,7 @@ import Moya
 import SwiftyJSON
 import UIKit
 
-class FeedViewController: UIViewController {
+final class FeedViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
