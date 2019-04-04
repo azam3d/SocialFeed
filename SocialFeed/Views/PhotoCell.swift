@@ -6,7 +6,7 @@ class PhotoCell: UICollectionViewCell {
     var feed: Feed? {
         didSet {
             if let feed = feed {
-//                textLabel.text = feed.title
+                textLabel.text = feed.title
             }
         }
     }

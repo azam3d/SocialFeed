@@ -52,7 +52,7 @@
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.87422668150000005" green="0.87422668150000005" blue="0.87422668150000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="188" id="2jd-IR-31p"/>
                                                         <constraint firstAttribute="height" constant="44" id="LtH-6z-JWr"/>
@@ -92,13 +92,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtV-N9-rek">
-                                                    <rect key="frame" x="12" y="78" width="351" height="20.333333333333329"/>
+                                                    <rect key="frame" x="12" y="68" width="351" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="5 Likes, 10 Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViC-Xb-xTH">
-                                                    <rect key="frame" x="12" y="103.33333333333333" width="351" height="14"/>
+                                                    <rect key="frame" x="12" y="93.333333333333329" width="351" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="3xQ-O1-GYc"/>
                                                     </constraints>
@@ -123,6 +123,7 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-hv-hzh">
                                                     <rect key="frame" x="12" y="12" width="50" height="50"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="9Pc-bA-nPB"/>
                                                         <constraint firstAttribute="height" constant="50" id="fbg-RK-aas"/>
@@ -130,11 +131,12 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="GGM-8F-w7A" firstAttribute="leading" secondItem="Azb-hv-hzh" secondAttribute="trailing" constant="13" id="5Nc-4U-6z0"/>
                                             <constraint firstAttribute="trailing" secondItem="f3e-KO-uKa" secondAttribute="trailing" constant="8" id="6Fw-Vw-Lyk"/>
                                             <constraint firstAttribute="trailing" secondItem="GGM-8F-w7A" secondAttribute="trailing" constant="8" id="895-28-Nct"/>
-                                            <constraint firstItem="KtV-N9-rek" firstAttribute="top" secondItem="Azb-hv-hzh" secondAttribute="bottom" constant="16" id="8eo-8o-GBX"/>
+                                            <constraint firstItem="KtV-N9-rek" firstAttribute="top" secondItem="Azb-hv-hzh" secondAttribute="bottom" constant="6" id="8eo-8o-GBX"/>
                                             <constraint firstItem="Azb-hv-hzh" firstAttribute="top" secondItem="JOl-ah-0Bb" secondAttribute="top" constant="12" id="8gX-BF-wtS"/>
                                             <constraint firstItem="f3e-KO-uKa" firstAttribute="leading" secondItem="GGM-8F-w7A" secondAttribute="leading" id="BY9-sV-Pbb"/>
                                             <constraint firstItem="KtV-N9-rek" firstAttribute="leading" secondItem="JOl-ah-0Bb" secondAttribute="leading" constant="12" id="BvK-zw-sJg"/>
