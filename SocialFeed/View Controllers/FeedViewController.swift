@@ -45,7 +45,6 @@ final class FeedViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPost))
 
         state = .loading
-        fetchData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -64,12 +63,12 @@ final class FeedViewController: UIViewController {
         }
         switch state {
         case .loading:
-            print("loading")
+            fetchData()
         case .loaded:
-            print("loaded")
             refreshControl.endRefreshing()
+            collectionView.reloadData()
         case .empty:
-            print("empty")
+            view = emptyView()
         case .error:
             print("error")
             view = emptyView()
@@ -92,12 +91,10 @@ final class FeedViewController: UIViewController {
                     }
                 }
                 self?.state = .loaded
-                self?.collectionView.reloadData()
             case let .failure(error):
-                self?.state = .error
-                print("error")
                 print(error.errorDescription!)
                 self?.errorText = "The Internet connection appears to be offline."
+                self?.state = .error
             }
         }
     }
@@ -118,6 +115,7 @@ final class FeedViewController: UIViewController {
         emptyLabel.textColor = UIColor.lightGray
 
         let emptyView = UIView(frame: self.view.bounds)
+        emptyView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         emptyView.addSubview(emptyLabel)
 
         return emptyView
