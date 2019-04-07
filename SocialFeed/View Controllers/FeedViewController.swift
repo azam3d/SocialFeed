@@ -18,17 +18,19 @@ final class FeedViewController: UIViewController {
                                  for: UIControl.Event.valueChanged)
         return refreshControl
     }()
+    
+    enum State: String {
+        case loading, loaded, empty, error
+    }
+    enum PostType {
+        case photo, text
+    }
+    var state: State! {
+        didSet {
+            render()
+        }
+    }
     var feeds = [Feed]()
-    
-//    lazy var collectionView: UICollectionView = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.estimatedItemSize = CGSize(width: view.bounds.width, height: 142)
-//        layout.itemSize = CGSize(width: view.bounds.width, height: 142)
-//
-//        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    
-//        return collectionView
-//    }()
     var errorText = "No feed."
     
     override func viewDidLoad() {
@@ -42,6 +44,7 @@ final class FeedViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .automatic
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPost))
 
+        state = .loading
         fetchData()
     }
 
@@ -54,25 +57,44 @@ final class FeedViewController: UIViewController {
         super.didReceiveMemoryWarning()
         feeds = []
     }
+    
+    private func render() {
+        guard let state = state else {
+            fatalError()
+        }
+        switch state {
+        case .loading:
+            print("loading")
+        case .loaded:
+            print("loaded")
+            refreshControl.endRefreshing()
+        case .empty:
+            print("empty")
+        case .error:
+            print("error")
+            view = emptyView()
+        }
+    }
 
     @objc private func fetchData() {
-        let provider = MoyaProvider<FeedService>(plugins: [NetworkLoggerPlugin(verbose: true)])
+        let provider = MoyaProvider<FeedService>(/*plugins: [NetworkLoggerPlugin(verbose: false)]*/)
         provider.request(.showPostFiltered(albumId: 1)) { [weak self] result in
             switch result {
             case let .success(moyaResponse):
                 let data = moyaResponse.data
 
                 let json = JSON(data)
-                dump(json)
+//                dump(json)
 
                 for (_, subJson): (String, JSON) in json {
                     if subJson["title"].stringValue != "" {
                         self?.feeds.append(Feed(json: subJson))
                     }
                 }
+                self?.state = .loaded
                 self?.collectionView.reloadData()
-                self?.refreshControl.endRefreshing()
             case let .failure(error):
+                self?.state = .error
                 print("error")
                 print(error.errorDescription!)
                 self?.errorText = "The Internet connection appears to be offline."
@@ -140,7 +162,7 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 40.0
+        return 12.0
     }
     
 }
