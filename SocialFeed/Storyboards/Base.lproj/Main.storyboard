@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aG7-or-A5S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q31-0c-8xb">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -200,7 +200,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="aAg-Ye-zGM"/>
                     <navigationItem key="navigationItem" id="f1E-pR-R4z"/>
                     <connections>
                         <outlet property="collectionView" destination="5MG-YY-iGc" id="GvP-aU-SiH"/>
@@ -208,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418.4000000000001" y="133.00492610837438"/>
+            <point key="canvasLocation" x="2244" y="117"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bnQ-U1-xHm">
@@ -226,7 +225,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="T8G-nN-yEF">
-                                <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="QW2-rZ-Wex"/>
                                 </constraints>
@@ -276,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyy-0K-4tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2223.1999999999998" y="133.74384236453201"/>
+            <point key="canvasLocation" x="3049" y="118"/>
         </scene>
         <!--Create Post View Controller-->
         <scene sceneID="ZFk-Qf-6Yu">
@@ -341,12 +340,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dzh-Ud-PIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3036" y="133"/>
+            <point key="canvasLocation" x="3862" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jOD-XI-cdM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aG7-or-A5S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="b22-ey-Nui"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Hy-X6-Twt">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -354,12 +354,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Q31-0c-8xb" kind="relationship" relationship="rootViewController" id="74O-B3-jZo"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Tit-7N-REP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqc-kV-akI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-257" y="862"/>
+            <point key="canvasLocation" x="1417" y="118"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gyk-3X-9N0">
@@ -373,7 +373,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="6a6-HC-Ncn"/>
+                        <segue destination="aG7-or-A5S" kind="relationship" relationship="viewControllers" id="ePI-Nd-nkH"/>
                         <segue destination="Ozy-r4-eO8" kind="relationship" relationship="viewControllers" id="YML-Ja-Qvg"/>
                         <segue destination="koT-JN-aG2" kind="relationship" relationship="viewControllers" id="Y3C-pR-gIz"/>
                         <segue destination="fWr-OL-hAq" kind="relationship" relationship="viewControllers" id="Ppb-FW-jXI"/>

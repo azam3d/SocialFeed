@@ -9,7 +9,6 @@ final class FeedViewController: UIViewController {
         didSet {
             collectionView.backgroundColor = UIColor(white: 0.95, alpha: 1)
             collectionView.refreshControl = refreshControl
-            
         }
     }
     
@@ -36,7 +35,6 @@ final class FeedViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.dataSource = self
-//        collectionView.collectionViewLayout = UICollectionViewDelegateFlowLayout
 
         navigationItem.title = NSLocalizedString("Feed", comment: "Title for FeedVC")
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -124,11 +122,11 @@ extension FeedViewController: UICollectionViewDataSource {
         photoCell.commentHitArea.isUserInteractionEnabled = true
         photoCell.commentHitArea.addGestureRecognizer(gesture)
 
-//        if let url = URL(string: feeds[indexPath.row].url) {
-//            photoCell.profileImageView.downloadedFrom(url: url)
-//        } else {
-//            photoCell.profileImageView.image = UIImage(named: "ic_comment")
-//        }
+        if let url = URL(string: feeds[indexPath.row].url) {
+            photoCell.profileImageView.downloadedFrom(url: url)
+        } else {
+            photoCell.profileImageView.image = UIImage(named: "ic_comment")
+        }
         return photoCell
     }
     
@@ -139,6 +137,10 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.bounds.width, height: 180.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 40.0
     }
     
 }
