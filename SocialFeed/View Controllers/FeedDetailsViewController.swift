@@ -1,12 +1,8 @@
 
-import IGListKit
 import UIKit
 
 final class FeedDetailsViewController: UIViewController {
     
-    lazy var adapter: ListAdapter = {
-        return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-    }()
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: 375, height: 142)
@@ -28,8 +24,6 @@ final class FeedDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(collectionView)
-        adapter.collectionView = collectionView
-        adapter.dataSource = self
         navigationController?.navigationBar.prefersLargeTitles = false
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(openImageVC))
@@ -48,29 +42,6 @@ final class FeedDetailsViewController: UIViewController {
     @objc private func openImageVC() {
         let vc = ImageViewController()
         present(vc, animated: true, completion: nil)
-    }
-    
-    
-}
-
-extension FeedDetailsViewController: ListAdapterDataSource {
-    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return combine as! [ListDiffable]
-    }
-    
-    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return ListSectionController()
-    }
-    
-    func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        let emptyView = UIView(frame: self.view.bounds)
-        let emptyLabel = UILabel(frame: CGRect(x: (view.bounds.width / 2) - 150, y: (view.bounds.height / 2) - 15, width: 300, height: 70))
-        emptyLabel.text = errorText
-        emptyLabel.textAlignment = .center
-        emptyLabel.textColor = UIColor.lightGray
-        emptyView.addSubview(emptyLabel)
-        
-        return emptyView
     }
     
 }

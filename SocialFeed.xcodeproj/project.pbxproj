@@ -24,8 +24,6 @@
 		C563AA1F1F7C23E0002DD4FF /* SocialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563AA1E1F7C23E0002DD4FF /* SocialFeedTests.swift */; };
 		C5643DAD20434EA900460945 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70E11F8F7476002E1AAE /* Alamofire.framework */; };
 		C5643DAE20434EA900460945 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70E11F8F7476002E1AAE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C5643DAF20434EA900460945 /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70DF1F8F7476002E1AAE /* IGListKit.framework */; };
-		C5643DB020434EA900460945 /* IGListKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70DF1F8F7476002E1AAE /* IGListKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5643DB120434EA900460945 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70E21F8F7476002E1AAE /* Moya.framework */; };
 		C5643DB220434EA900460945 /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70E21F8F7476002E1AAE /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5643DB320434EA900460945 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54D70E01F8F7476002E1AAE /* Result.framework */; };
@@ -59,7 +57,6 @@
 			files = (
 				C5643DAE20434EA900460945 /* Alamofire.framework in Embed Frameworks */,
 				C5643DB220434EA900460945 /* Moya.framework in Embed Frameworks */,
-				C5643DB020434EA900460945 /* IGListKit.framework in Embed Frameworks */,
 				C5643DB420434EA900460945 /* Result.framework in Embed Frameworks */,
 				C5643DB620434EA900460945 /* SwiftyJSON.framework in Embed Frameworks */,
 			);
@@ -76,7 +73,6 @@
 		C5382D331F822B9C00B67F43 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C5382D351F824FFA00B67F43 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		C5382D371F82673600B67F43 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C54D70DF1F8F7476002E1AAE /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = SOURCE_ROOT; };
 		C54D70E01F8F7476002E1AAE /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
 		C54D70E11F8F7476002E1AAE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		C54D70E21F8F7476002E1AAE /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = SOURCE_ROOT; };
@@ -110,7 +106,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5643DAD20434EA900460945 /* Alamofire.framework in Frameworks */,
-				C5643DAF20434EA900460945 /* IGListKit.framework in Frameworks */,
 				C5643DB120434EA900460945 /* Moya.framework in Frameworks */,
 				C5643DB320434EA900460945 /* Result.framework in Frameworks */,
 				C5643DB520434EA900460945 /* SwiftyJSON.framework in Frameworks */,
@@ -236,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				C54D70E11F8F7476002E1AAE /* Alamofire.framework */,
-				C54D70DF1F8F7476002E1AAE /* IGListKit.framework */,
 				C54D70E21F8F7476002E1AAE /* Moya.framework */,
 				C54D70E01F8F7476002E1AAE /* Result.framework */,
 				C54D70E31F8F7476002E1AAE /* SwiftyJSON.framework */,

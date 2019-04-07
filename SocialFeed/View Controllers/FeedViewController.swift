@@ -35,6 +35,7 @@ final class FeedViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.dataSource = self
+        collectionView.delegate = self
 
         navigationItem.title = NSLocalizedString("Feed", comment: "Title for FeedVC")
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -88,17 +89,17 @@ final class FeedViewController: UIViewController {
         navigationController?.present(createPostVC, animated: true, completion: nil)
     }
 
-//    func emptyView(for listAdapter: ListAdapter) -> UIView? {
-//        let emptyLabel = UILabel(frame: CGRect(x: (view.bounds.width / 2) - 150, y: (view.bounds.height / 2) - 15, width: 300, height: 70))
-//        emptyLabel.text = errorText
-//        emptyLabel.textAlignment = .center
-//        emptyLabel.textColor = UIColor.lightGray
-//
-//        let emptyView = UIView(frame: self.view.bounds)
-//        emptyView.addSubview(emptyLabel)
-//
-//        return emptyView
-//    }
+    private func emptyView() -> UIView? {
+        let emptyLabel = UILabel(frame: CGRect(x: (view.bounds.width / 2) - 150, y: (view.bounds.height / 2) - 15, width: 300, height: 70))
+        emptyLabel.text = errorText
+        emptyLabel.textAlignment = .center
+        emptyLabel.textColor = UIColor.lightGray
+
+        let emptyView = UIView(frame: self.view.bounds)
+        emptyView.addSubview(emptyLabel)
+
+        return emptyView
+    }
     
     @objc func likePost() {
         print("comment")
@@ -129,7 +130,6 @@ extension FeedViewController: UICollectionViewDataSource {
         }
         return photoCell
     }
-    
     
 }
 

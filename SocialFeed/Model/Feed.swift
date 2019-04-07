@@ -1,5 +1,4 @@
 
-import IGListKit
 import SwiftyJSON
 
 enum PostType {
