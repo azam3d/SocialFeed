@@ -3,18 +3,9 @@ import UIKit
 
 final class FeedDetailsViewController: UIViewController {
     
-    lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: 375, height: 142)
-        layout.itemSize = CGSize(width: 375, height: 142)
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        return collectionView
-    }()
     @IBOutlet weak var stickyTextView: UITextView!
-    var errorText: String? = "No feed."
     @IBOutlet weak var heroImage: UIImageView!
+    private var errorText = "No feed."
     
     var combine = [Any]()
 //    var comments = [Comment]()
@@ -23,16 +14,11 @@ final class FeedDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(collectionView)
+        navigationItem.title = NSLocalizedString("Feed Details", comment: "Title for FeedDetailsVC")
         navigationController?.navigationBar.prefersLargeTitles = false
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(openImageVC))
         heroImage.addGestureRecognizer(tap)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,8 +26,12 @@ final class FeedDetailsViewController: UIViewController {
     }
     
     @objc private func openImageVC() {
-        let vc = ImageViewController()
-        present(vc, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let imageVC = storyboard.instantiateViewController(withIdentifier: Constants.storyboards.imageVC) as? ImageViewController else {
+            fatalError("Could not instantiate view controller createPostVC")
+        }
+        navigationController?.present(imageVC, animated: true, completion: nil)
     }
     
 }

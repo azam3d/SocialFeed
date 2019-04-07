@@ -6,6 +6,7 @@ struct Constants {
     struct storyboards {
         static let createPost = "Create Post"
         static let feedDetails = "Feed Details"
+        static let imageVC = "ImageVC"
     }
     
     struct nib {

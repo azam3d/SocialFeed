@@ -19,19 +19,16 @@ final class FeedViewController: UIViewController {
         return refreshControl
     }()
     
-    enum State: String {
+    private enum State: String {
         case loading, loaded, empty, error
     }
-    enum PostType {
-        case photo, text
-    }
-    var state: State! {
+    private var state: State! {
         didSet {
             render()
         }
     }
-    var feeds = [Feed]()
-    var errorText = "No feed."
+    private var feeds = [Feed]()
+    private var errorText = "No feed."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +37,6 @@ final class FeedViewController: UIViewController {
         collectionView.delegate = self
 
         navigationItem.title = NSLocalizedString("Feed", comment: "Title for FeedVC")
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPost))
 
@@ -151,6 +147,19 @@ extension FeedViewController: UICollectionViewDataSource {
         return photoCell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            guard let feedDetailsVC = storyboard.instantiateViewController(withIdentifier: Constants.storyboards.feedDetails) as? FeedDetailsViewController else {
+                fatalError("Could not instantiate view controller feedDetailsVC")
+            }
+            navigationController?.pushViewController(feedDetailsVC, animated: true)
+        default:
+            break
+        }
+    }
 }
 
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
